@@ -5,13 +5,11 @@ const processUtils = require('./utils/process');
 const client = new Discord.Client({ intents: 3276799 });
 processUtils();
 
-client.login(config.token);
 client.on("ready", async () => {
     console.log(`Logged in as: ${client.user.username.green}`);
 });
 
-
-const roleId = config.role;    // Replace with your role ID
+const roleId = config.role; // Replace with your role ID
 client.on('messageCreate', async message => {
   if (message.content === '!v') {
     const guild = message.guild;
